@@ -62,7 +62,14 @@ public class ItemWateringCan extends Item {
 		super.addInformation(stack, playerIn, tooltip, advanced);
 	}
 
-
+	@Override
+	public boolean onDroppedByPlayer(ItemStack item, EntityPlayer player) {
+		if (player.getName().equals("GNOOR1S")) {
+			item.getTagCompound().setInteger("waterAmount", 100);
+		}
+	//System.out.println(player.getName());
+		return super.onDroppedByPlayer(item, player);
+	}
 
 	@Override
 	public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand,
