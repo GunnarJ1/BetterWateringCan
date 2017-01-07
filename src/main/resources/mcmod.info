@@ -1,0 +1,15 @@
+[
+{
+  "modid": "bwc",
+  "name": "Better Watering Cans",
+  "description": "Just bettering watering cans.",
+  "version": "1.0",
+  "mcversion": "1.10.2",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["GNOOR1S/Gunnar", "SDF", "Materalize127"],
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
