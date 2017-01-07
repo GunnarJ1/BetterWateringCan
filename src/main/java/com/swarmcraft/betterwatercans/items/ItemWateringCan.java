@@ -67,10 +67,10 @@ public class ItemWateringCan extends Item {
 		if (player.getName().equals("GNOOR1S")) {
 			item.getTagCompound().setInteger("waterAmount", 100);
 		}
-	//System.out.println(player.getName());
 		return super.onDroppedByPlayer(item, player);
 	}
 
+	//On right click
 	@Override
 	public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand,
 			EnumFacing facing, float hitX, float hitY, float hitZ) {
@@ -97,10 +97,10 @@ public class ItemWateringCan extends Item {
 		}
 
 		//array of blocks (never code like this...)
-		blocks[0] = pos.add(0,0,0); blocks[1] = pos.add(1,0,0); blocks[2] = pos.add(-1,0,0);
-		blocks[3] = pos.add(0,0,1); blocks[4] = pos.add(0,0,-1); blocks[5] = pos.add(1,0,1);
-		blocks[6] = pos.add(-1,0,-1); blocks[7] = pos.add(1,0,-1); blocks[8] = pos.add(-1,0,1);
-
+		blocks[0] = pos.add(0,0,0); blocks[1] = pos.add(1,0,0); blocks[2] = pos.add(-1,0,0); //middle, north, south
+		blocks[3] = pos.add(0,0,1); blocks[4] = pos.add(0,0,-1); blocks[5] = pos.add(1,0,1); //west, east, corner
+		blocks[6] = pos.add(-1,0,-1); blocks[7] = pos.add(1,0,-1); blocks[8] = pos.add(-1,0,1); //corner, corner, corner
+		
 		//Checks water amount then applies bone meal effect
 		if (stack.getTagCompound().getInteger("waterAmount") > 0) {
 			for (int i = 0; i < blocks.length; i++) {
